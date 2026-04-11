@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="./style/shopping-cart.css">
+</head>
+<body>
+    <main class="cart-page">
+        <section class="cart-table-section">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th class="stt-col">STT</th>
+                        <th class="name-col">Tên sản phẩm</th>
+                        <th class="price-col">Giá</th>
+                        <th class="quantity-col">Số lượng</th>
+                        <th class="total-col">Tổng</th>
+                        <th class="remove-col">Xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="cart-placeholder"></td>
+                        <td colspan="4" class="cart-summary">
+                            <p>Tổng cộng : 0 đ</p>
+                            <p class="payment-total">Thanh toán : 0 VND</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="continue-shopping-wrap">
+                <a href="./home.html" class="continue-shopping">Tiếp tục mua hàng</a>
+            </div>
+        </section>
+
+        <section class="checkout-grid">
+            <div class="panel">
+                <div class="panel-header">1. Khách hàng khai báo thông tin</div>
+                <div class="panel-body customer-panel">
+                    <h2>Thông tin người mua</h2>
+                    <p class="required-note">Những phần đánh dấu (*) là bắt buộc</p>
+
+                    <form class="customer-form">
+                        <label for="customer-name">Họ tên*</label>
+                        <input id="customer-name" type="text">
+
+                        <label for="customer-phone">Điện thoại*</label>
+                        <input id="customer-phone" type="tel">
+
+                        <label for="customer-address">Địa chỉ*</label>
+                        <input id="customer-address" type="text">
+
+                        <label for="customer-email">Email *</label>
+                        <input id="customer-email" type="email">
+                    </form>
+                </div>
+            </div>
+
+            <div class="sidebar-panels">
+                <div class="panel">
+                    <div class="panel-header">2. Ghi chú cho đơn hàng</div>
+                    <div class="panel-body">
+                        <textarea class="order-note" aria-label="Ghi chú cho đơn hàng"></textarea>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">3. Chọn phương thức thanh toán</div>
+                    <div class="panel-body payment-panel">
+                        <label class="payment-option">
+                            <input type="radio" name="payment-method" checked>
+                            <span>Thanh toán tại cửa hàng</span>
+                        </label>
+
+                        <div class="store-box">
+                            <p>Nhận hàng và thanh toán tiền tại cửa hàng Laptop AZ:</p>
+                            <p>-CS1: Số 18, ngõ 121, Thái Hà, Đống Đa, Hà Nội</p>
+                            <p>-CS2: Số 56 Trần Phú, Hà Đông, Hà Nội</p>
+                        </div>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment-method">
+                            <span>Thanh toán khi nhận hàng (COD)</span>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment-method">
+                            <span>Thanh toán bằng chuyển khoản ngân hàng</span>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment-method">
+                            <span>Thanh toán trực tuyến qua Alepay</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="submit-wrap">
+                    <button type="button" class="submit-order">GỬI ĐƠN HÀNG</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./script/shopping-cart.js"></script>
+</body>
+</html>
