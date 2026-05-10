@@ -1,6 +1,7 @@
 var registerBtn = document.getElementById("registerBtn");
 
 registerBtn.addEventListener("click", function() {
+    
     var username = document.getElementById("txt-username").value.trim();
     var email = document.getElementById("txt-email").value.trim();
     var password = document.getElementById("txt-password").value;
@@ -64,9 +65,8 @@ registerBtn.addEventListener("click", function() {
             localStorage.setItem("users", JSON.stringify(users));
             
         }
-
         alert("Account created successfully!");
-        window.location.href = "./login.html";
+        window.location.href = "/login.html";
     }
 
 });

@@ -5,7 +5,7 @@ window.onload = function() {
     if(userLoggedIn != null) {
         userLoggedIn = JSON.parse(userLoggedIn);
         alert("You are already logged in as " + userLoggedIn.username + ". Redirecting to homepage...");
-        window.location.href = "/";
+        window.location.href = "/home.html";
     }
 }
 

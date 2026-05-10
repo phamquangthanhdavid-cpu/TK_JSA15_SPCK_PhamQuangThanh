@@ -102,7 +102,6 @@ body {
 .detail-image-wrap img {
   width: 100%;
   max-width: 360px;
-  object-fit: contain;
 }
 
 .detail-category {
@@ -115,7 +114,8 @@ body {
 
 .detail-content h1 {
   margin: 0 0 16px;
-  font-size: 40px;
+  font-size: 30px;
+  line-height: 1.35;
 }
 
 .detail-price {
@@ -128,6 +128,7 @@ body {
 .detail-description {
   margin: 0 0 24px;
   line-height: 1.7;
+  color: #4b5563;
 }
 
 .detail-actions {
@@ -136,8 +137,16 @@ body {
   gap: 12px;
 }
 
-.primary-btn,
-.secondary-btn {
+.add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.view-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -147,14 +156,22 @@ body {
   font-weight: 700;
 }
 
-.primary-btn {
+.add-btn {
   background: #2b80dd;
   color: #ffffff;
 }
 
-.secondary-btn {
+.add-btn:hover {
+  scale: 1.5px;
+}
+
+.view-btn {
   border: 1px solid #2b80dd;
   color: #2b80dd;
+}
+
+.view-btn:hover {
+  scale: 1.5px;
 }
 
 
