@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var image = document.querySelector("[data-product-image]");
   var name = document.querySelector("[data-product-name]");
   var price = document.querySelector("[data-product-price]");
-  var description = document.querySelector("[data-product-description]");
   var addToCartButton = document.getElementById("add-to-cart");
 
   var savedProduct = localStorage.getItem("selectedProduct");
@@ -13,8 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     image.src = product.image;
     name.innerText = product.name;
     price.innerText = product.price;
-    description.innerText = "Đây là mô tả chi tiết của sản phẩm";
-    document.title = product.name;
   }
 
 
@@ -24,9 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
   addToCartButton.addEventListener("click", function (event) {
+    // Ngăn chặn hành vi mặc định của liên kết
+    // vd: nếu nút "Thêm vào giỏ hàng" là một thẻ <a>, nó sẽ ngăn chặn việc điều hướng mặc định đến trang giỏ hàng
     event.preventDefault();
 
-    // Lấy thông tin sản phẩm từ trang detail.js để thêm vào shopping-cart.js
+    // Tạo object để Lấy thông tin sản phẩm từ trang detail.js để thêm vào shopping-cart.js
     var productAddToCart = {
       name: name.innerText,
       image: image.getAttribute("src"),

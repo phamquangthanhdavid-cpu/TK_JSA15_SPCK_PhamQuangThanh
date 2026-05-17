@@ -16,6 +16,7 @@ function formatMoney(number) {
 }
 
 function saveCart() {
+  // Đổi mảng cart thành chuỗi JSON và lưu vào localStorage
   localStorage.setItem("cartProducts", JSON.stringify(cart));
 }
 
@@ -72,7 +73,8 @@ function showCart() {
 }
 
 function changeQuantity(index, value) {
-  var quantity = parseInt(value, 10);
+  // parseInt() đổi value sang số nguyên
+  var quantity = parseInt(value);
 
   if (isNaN(quantity) || quantity < 1) {
     quantity = 1;
@@ -84,6 +86,7 @@ function changeQuantity(index, value) {
 }
 
 function deleteProduct(index) {
+  // Xóa sản phẩm tại vị trí bấm nút xóa khỏi mảng cart
   cart.splice(index, 1);
   saveCart();
   showCart();

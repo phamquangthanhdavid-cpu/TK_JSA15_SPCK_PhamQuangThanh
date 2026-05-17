@@ -1,36 +1,25 @@
 var btnLogin = document.getElementById("btn-login");
 
-window.onload = function() {
-    var userLoggedIn = localStorage.getItem("userLoggedIn");
-    if(userLoggedIn != null) {
-        userLoggedIn = JSON.parse(userLoggedIn);
-        alert("You are already logged in as " + userLoggedIn.username + ". Redirecting to homepage...");
-        window.location.href = "/home.html";
-    }
-}
+btnLogin.addEventListener("click", function () {
+  var username = document.getElementById("username").value.trim();
+  var password = document.getElementById("password").value;
+  var users = JSON.parse(localStorage.getItem("users")) || [];
 
-btnLogin.addEventListener("click", function() {
-    var userName = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+  if (username === "" || password === "") {
+    alert("Please enter username and password.");
+    return;
+  }
 
-    var users = localStorage.getItem("users");
-    if(users == null) {
-        alert("Username or password is incorrect.");
-        return;
-    }
+  var userLogin = users.find(function (user) {
+    return user.username === username && user.password === password;
+  });
 
-    var objectUsers = JSON.parse(users);
-    for(var i = 0 ; i < objectUsers.length; i++) {
-        var objUsername = objectUsers[i].username;
-        var objPassword = objectUsers[i].password; 
-        if(objUsername == userName && objPassword == password) {
-            alert("Login success!")
-            var userLoggedIn = objectUsers[i];
-            localStorage.setItem("userLoggedIn", JSON.stringify(userLoggedIn));
-            window.location.href = "/";
-            return;
-        }
-    }
-
+  if (!userLogin) {
     alert("Username or password is incorrect.");
-})
+    return;
+  }
+
+  localStorage.setItem("userLoggedIn", JSON.stringify(userLogin));
+  alert("Login success!");
+  window.location.href = "./home.html";
+});
